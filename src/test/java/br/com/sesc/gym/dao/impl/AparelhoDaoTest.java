@@ -10,7 +10,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.sesc.gym.model.Academia;
+import br.com.sesc.virtualtrainersesc.dao.impl.AcademiaDao;
+import br.com.sesc.virtualtrainersesc.model.Academia;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:springconfiguration-test.xml"})

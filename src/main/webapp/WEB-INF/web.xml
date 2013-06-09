@@ -22,7 +22,7 @@
 	
 	<filter>
         <filter-name>CharsetFilter</filter-name>
-        <filter-class>br.com.sesc.gym.filter.CharsetFilter</filter-class>
+        <filter-class>br.com.sesc.virtualtrainersesc.filter.CharsetFilter</filter-class>
     </filter>
 
     <filter-mapping>

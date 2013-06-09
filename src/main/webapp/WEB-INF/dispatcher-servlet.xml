@@ -59,10 +59,10 @@
 		</property>
 		<property name="annotatedClasses">
 			<list>
-				<value>br.com.sesc.gym.model.Academia</value>
-				<value>br.com.sesc.gym.model.Exercicio</value>
-				<value>br.com.sesc.gym.model.Pessoa</value>
-				<value>br.com.sesc.gym.model.TreinoExercicio</value>
+				<value>br.com.sesc.virtualtrainersesc.model.Academia</value>
+				<value>br.com.sesc.virtualtrainersesc.model.Aluno</value>
+				<value>br.com.sesc.virtualtrainersesc.model.Exercicio</value>
+				<value>br.com.sesc.virtualtrainersesc.model.Treino</value>
 			</list>
 		</property>
 	</bean>
