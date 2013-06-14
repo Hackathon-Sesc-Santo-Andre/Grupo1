@@ -47,5 +47,14 @@ public class HomeController {
 		}
 		
 		throw new Exception();
+	}
+	
+	@Transactional(readOnly=true)
+	@RequestMapping(value="olaJson1.do", method=RequestMethod.GET)
+	public @ResponseBody List<Academia> showIndexJson1(HttpServletRequest request,HttpServletResponse response) throws Exception{	
+		
+		List<Academia> findAll = academiaDao.findAll();
+		
+		return findAll;
 	}	
 }
