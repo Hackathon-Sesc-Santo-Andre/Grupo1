@@ -16,7 +16,7 @@
 	<!-- Desenvolvimento -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/sesc_gym" />
+		<property name="url" value="jdbc:mysql://localhost:3306/VirtualTrainerSesc" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>
@@ -39,10 +39,10 @@
 		</property>
 		<property name="annotatedClasses">
 			<list>
-				<value>br.com.sesc.gym.model.Academia</value>
-				<value>br.com.sesc.gym.model.Exercicio</value>
-				<value>br.com.sesc.gym.model.Pessoa</value>
-				<value>br.com.sesc.gym.model.TreinoExercicio</value>
+				<value>br.com.sesc.virtualtrainersesc.model.Academia</value>
+				<value>br.com.sesc.virtualtrainersesc.model.Aluno</value>
+				<value>br.com.sesc.virtualtrainersesc.model.Exercicio</value>
+				<value>br.com.sesc.virtualtrainersesc.model.Treino</value>
 			</list>
 		</property>
 	</bean>

@@ -71,4 +71,10 @@ public class Academia implements Serializable {
 		this.nome = nome;
 	}
 
+	@Override
+	public String toString() {
+		return "Academia [id=" + id + ", capacidadeTotal=" + capacidadeTotal
+				+ ", horaAbertura=" + horaAbertura + ", horaFechamento="
+				+ horaFechamento + ", nome=" + nome + "]";
+	}
 }
