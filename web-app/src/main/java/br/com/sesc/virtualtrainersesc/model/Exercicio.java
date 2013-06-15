@@ -26,6 +26,7 @@ public class Exercicio implements Serializable {
 
 	//bi-directional many-to-one association to Treino
 	@ManyToOne
+	@JoinColumn(name="TREINO_ID")
 	private Treino treino;
 
 	public Exercicio() {
@@ -79,4 +80,10 @@ public class Exercicio implements Serializable {
 		this.treino = treino;
 	}
 
+	@Override
+	public String toString() {
+		return "Exercicio [id=" + id + ", equipamento=" + equipamento
+				+ ", execucao=" + execucao + ", musculatura=" + musculatura
+				+ ", qualidade=" + qualidade + "]";
+	}
 }

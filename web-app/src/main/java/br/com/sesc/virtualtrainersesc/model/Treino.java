@@ -16,11 +16,11 @@ import java.util.List;
 	@NamedQuery(
 	name = "Treino.findById",
 	query = "FROM Treino tr WHERE tr.id=:id"
-	)/*,
+	),
 	@NamedQuery(
-	name = "Aparelho.findByNome",
-	query = "FROM Aparelho apar WHERE apar.nome = :nome"
-	)*/	
+	name = "Treino.findByAlunoMatricula",
+	query = "FROM Treino tr WHERE tr.aluno.matricula = :matricula"
+	)	
 })
 public class Treino implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -29,6 +29,8 @@ public class Treino implements Serializable {
 	private int id;
 
 	private int qtde;
+	
+	private String nome;
 
 	//bi-directional many-to-one association to Exercicio
 	@OneToMany(mappedBy="treino")
@@ -65,20 +67,6 @@ public class Treino implements Serializable {
 		this.exercicios = exercicios;
 	}
 
-	public Exercicio addExercicio(Exercicio exercicio) {
-		getExercicios().add(exercicio);
-		exercicio.setTreino(this);
-
-		return exercicio;
-	}
-
-	public Exercicio removeExercicio(Exercicio exercicio) {
-		getExercicios().remove(exercicio);
-		exercicio.setTreino(null);
-
-		return exercicio;
-	}
-
 	public Aluno getAluno() {
 		return this.aluno;
 	}
@@ -87,4 +75,17 @@ public class Treino implements Serializable {
 		this.aluno = aluno;
 	}
 
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	@Override
+	public String toString() {
+		return "Treino [id=" + id + ", qtde=" + qtde + ", exercicios="
+				+ exercicios + ", aluno=" + aluno + "]";
+	}
 }

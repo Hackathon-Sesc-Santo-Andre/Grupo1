@@ -1,7 +1,8 @@
 package br.com.sesc.virtualtrainersesc.dao.impl;
 
-import static org.junit.Assert.*;
+import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
+
+import br.com.sesc.virtualtrainersesc.model.Treino;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:springconfiguration-test.xml"})
@@ -20,9 +23,17 @@ public class TreinoDaoTest {
 	TreinoDao treinoDao;
 	
 	@Test
+	@Ignore
 	public void testFindById() {
-		System.out.println(treinoDao.findById(1));
+		Treino treino = treinoDao.findById(1);
 		
+		System.out.println(treino.getExercicios());
 	}
 
+	@Test
+	public void testFindByAlunoMatricula() {
+		List<Treino> treinos = treinoDao.findByAlunoMatricula(1);
+		
+		System.out.println(treinos);
+	}
 }

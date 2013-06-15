@@ -1,5 +1,7 @@
 package br.com.sesc.virtualtrainersesc.dao.impl;
 
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
@@ -22,6 +24,14 @@ public class TreinoDao extends AbstractDao<Treino> implements GenericDao<Treino>
 		return (Treino) sessionFactory.getCurrentSession()
 									  .getNamedQuery("Treino.findById")
 									  .setParameter("id", treinoId).uniqueResult();
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Treino> findByAlunoMatricula(Integer matricula) {
+		return sessionFactory.getCurrentSession()
+							 .getNamedQuery("Treino.findByAlunoMatricula")
+							 .setParameter("matricula", matricula).list();
 		
 	}
 

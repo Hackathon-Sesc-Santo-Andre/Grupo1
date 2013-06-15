@@ -81,18 +81,11 @@ public class Aluno implements Serializable {
 		this.treinos = treinos;
 	}
 
-	public Treino addTreino(Treino treino) {
-		getTreinos().add(treino);
-		treino.setAluno(this);
-
-		return treino;
+	@Override
+	public String toString() {
+		return "Aluno [matricula=" + matricula + ", idade=" + idade + ", nome="
+				+ nome + ", peso=" + peso + ", senha=" + senha + "]";
 	}
 
-	public Treino removeTreino(Treino treino) {
-		getTreinos().remove(treino);
-		treino.setAluno(null);
-
-		return treino;
-	}
 
 }
