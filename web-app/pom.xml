@@ -98,7 +98,7 @@
     	<groupId>org.springframework</groupId>
     	<artifactId>spring-test</artifactId>
     	<version>${org.springframework.version}</version>
-    </dependency>
+    </dependency>      
     <dependency>
     	<groupId>commons-dbcp</groupId>
     	<artifactId>commons-dbcp</artifactId>

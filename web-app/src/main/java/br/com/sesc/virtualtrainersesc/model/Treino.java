@@ -2,6 +2,7 @@ package br.com.sesc.virtualtrainersesc.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -11,6 +12,16 @@ import java.util.List;
  */
 @Entity
 @Table(name="treino")
+@NamedQueries({
+	@NamedQuery(
+	name = "Treino.findById",
+	query = "FROM Treino tr WHERE tr.id=:id"
+	)/*,
+	@NamedQuery(
+	name = "Aparelho.findByNome",
+	query = "FROM Aparelho apar WHERE apar.nome = :nome"
+	)*/	
+})
 public class Treino implements Serializable {
 	private static final long serialVersionUID = 1L;
 

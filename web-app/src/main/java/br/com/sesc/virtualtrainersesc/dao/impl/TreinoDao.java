@@ -18,4 +18,11 @@ public class TreinoDao extends AbstractDao<Treino> implements GenericDao<Treino>
 		this.sessionFactory = sessionFactory;
 	}
 
+	public Treino findById(Integer treinoId) {
+		return (Treino) sessionFactory.getCurrentSession()
+									  .getNamedQuery("Treino.findById")
+									  .setParameter("id", treinoId).uniqueResult();
+		
+	}
+
 }
