@@ -25,7 +25,7 @@ public class SplashActivity extends RoboActivity{
 			
 			@Override
 			public void run() {
-                Intent intent = new Intent(SplashActivity.this, Treinos.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
 			}

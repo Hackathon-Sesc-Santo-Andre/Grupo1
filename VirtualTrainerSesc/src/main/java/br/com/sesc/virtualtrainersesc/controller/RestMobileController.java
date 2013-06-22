@@ -20,6 +20,7 @@ import br.com.sesc.virtualtrainersesc.model.Academia;
 import br.com.sesc.virtualtrainersesc.model.Aluno;
 import br.com.sesc.virtualtrainersesc.model.Exercicio;
 import br.com.sesc.virtualtrainersesc.model.Treino;
+import br.com.sesc.virtualtrainersesc.util.JsonReturn;
 
 @Controller
 public class RestMobileController {
@@ -98,11 +99,11 @@ public class RestMobileController {
 	
 	@Transactional(readOnly=true)
 	@RequestMapping(value="/mobile/treinos/{matricula}", method=RequestMethod.GET)
-	public @ResponseBody List<Treino> findTreinos(@PathVariable("matricula") Integer matricula, Model model) {
+	public @ResponseBody JsonReturn findTreinos(@PathVariable("matricula") Integer matricula, Model model) {
 		
 		List<Treino> treinosBase = treinoDao.findByAlunoMatricula(matricula);
 		
-		List<Treino> treinosReturn = new ArrayList<Treino>();
+		List<Object> treinosReturn = new ArrayList<Object>();
 		
 		for (Treino treino : treinosBase) {
 			Treino treinoClone = new Treino();
@@ -114,18 +115,24 @@ public class RestMobileController {
 			treinosReturn.add(treinoClone);
 		}
 		
-		return treinosReturn;
+		JsonReturn jsonReturn = new JsonReturn();
+		jsonReturn.setListData(treinosReturn);
+		
+		return jsonReturn;
 	}	
 	
 	@Transactional
 	@RequestMapping(value="/mobile/login/{matricula}/{senha}", method=RequestMethod.GET)
-	public @ResponseBody String login(@PathVariable("matricula") Integer matricula, @PathVariable("senha") String senha, Model model) {
-		Aluno aluno = alunoDao.find(matricula, senha);
+	public @ResponseBody JsonReturn login(@PathVariable("matricula") Integer treinoId, @PathVariable("senha") String senha, Model model) {
+		Aluno aluno = alunoDao.find(treinoId, senha);
+		JsonReturn retorno = new JsonReturn();
 		
 		if(aluno == null){
-			return "Usuario e ou senha invalidos";
-		} 
+			retorno.setData("Usuario e ou senha invalidos");
+		} else {
+			retorno.setData("OK");
+		}
 		
-		return "OK";
-	}	
+		return retorno;
+	}
 }

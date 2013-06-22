@@ -3,6 +3,10 @@ package br.org.virtualtrainersesc;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import roboguice.activity.RoboActivity;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,15 +22,22 @@ import android.widget.ListView;
 import android.widget.TextView;
 import br.org.virtualtrainersesc.model.Treino;
 
+import com.androidquery.AQuery;
+import com.androidquery.callback.AjaxStatus;
+
 public class Treinos extends RoboActivity{
 	
 	ListView lista;
+	
+	AQuery a;
 	
 	@SuppressLint("NewApi") 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.treinos);
+		
+		a = new AQuery(this);
 		
 		lista = (ListView) findViewById(R.id.lsTreinos);
 		lista.setOnItemClickListener(new OnItemClickListener() {
@@ -51,20 +62,65 @@ public class Treinos extends RoboActivity{
 	}
 	
 	private void popularListView() {
-		List<Treino> TreinosFake = new ArrayList<Treino>();
+		/*List<Treino> TreinosFake = new ArrayList<Treino>();*/
 		
-		for (int i = 0; i <= 3; i++) {
+        if(getIntent().getExtras() != null){
+        	Bundle param = getIntent().getExtras();
+        	
+        	if(param != null){
+        		String url = "http://172.20.10.7:8080/gym/pages/mobile/treinos/"+param.getInt("matricula");
+        		
+        		/*String url = "http://www.google.com/uds/GnewsSearch?q=Obama&v=1.0";*/
+        		
+        		System.out.println(" A URL é [" + url + "]");
+        		
+        		a.ajax(url, JSONObject.class, this, "retorno");
+        	}
+        }
+		
+		
+/*		for (int i = 0; i <= 3; i++) {
 			Treino treinoFake = new Treino();
 			
 			treinoFake.setId(200+i);
 			treinoFake.setNome("Treino"+i);
 			
 			TreinosFake.add(treinoFake);
-		}
+		}*/
 		
-		ListaTreinoAdapter adapter = new ListaTreinoAdapter(this, R.layout.linha_treino, TreinosFake);
+/*		ListaTreinoAdapter adapter = new ListaTreinoAdapter(this, R.layout.linha_treino, TreinosFake);
 		
-		lista.setAdapter(adapter);
+		lista.setAdapter(adapter);*/
+	}
+	
+	public void retorno(String url, JSONObject json, AjaxStatus status) throws JSONException {
+		if(json != null && json.getJSONArray("listData") != null){ 
+			JSONArray jsonArray = json.getJSONArray("listData");
+
+			if(jsonArray.length() == 0){
+				TextView linhaTreino = (TextView) findViewById(R.id.txtInfo);
+				linhaTreino.setText("Não existem treinos, procure o seu professor!");
+
+				return;
+			}
+			
+			List<Treino> treinos = new ArrayList<Treino>();
+			for (int i = 0; i < jsonArray.length() ; i++) {
+				JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+				Treino treino = new Treino();
+
+				treino.setId(jsonObject.getInt("id"));
+				treino.setNome(jsonObject.getString("nome"));
+
+				treinos.add(treino);
+			}
+			
+
+			ListaTreinoAdapter adapter = new ListaTreinoAdapter(this, R.layout.linha_treino, treinos);
+
+			lista.setAdapter(adapter);
+		} 
 	}
 	
 	private class ListaTreinoAdapter extends ArrayAdapter<Treino>{
