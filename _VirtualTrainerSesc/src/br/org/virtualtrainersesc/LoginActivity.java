@@ -59,15 +59,17 @@ public class LoginActivity extends Activity {
 			}
 			
 			public void retorno(String url, JSONObject json, AjaxStatus status) throws JSONException {
-				String retorno = json.getString("data");
-				if(json != null && retorno != null){ 
-					System.out.println(retorno);
-					
-					if(retorno.toString().equalsIgnoreCase("OK")){
-						EditText matricula = (EditText) findViewById(R.id.txMatricula);
-						logar(Integer.parseInt(matricula.getText().toString()));
-					} else {
-						Toast.makeText(LoginActivity.this, retorno.toString() , Toast.LENGTH_SHORT).show();
+				if(json != null){
+					String retorno = json.getString("data");
+					if(retorno != null){
+						System.out.println(retorno);
+						
+						if(retorno.toString().equalsIgnoreCase("OK")){
+							EditText matricula = (EditText) findViewById(R.id.txMatricula);
+							logar(Integer.parseInt(matricula.getText().toString()));
+						} else {
+							Toast.makeText(LoginActivity.this, retorno.toString() , Toast.LENGTH_SHORT).show();
+						}
 					}
 				} 
 			}
