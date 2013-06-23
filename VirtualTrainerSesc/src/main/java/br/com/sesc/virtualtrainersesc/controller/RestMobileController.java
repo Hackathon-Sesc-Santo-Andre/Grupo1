@@ -61,11 +61,11 @@ public class RestMobileController {
 
 	@Transactional(readOnly=true)
 	@RequestMapping(value="/mobile/exercicios/{treinoId}", method=RequestMethod.GET)
-	public @ResponseBody List<Exercicio> findExercicios(@PathVariable("treinoId") Integer treinoId, Model model) {
+	public @ResponseBody JsonReturn findExercicios(@PathVariable("treinoId") Integer treinoId, Model model) {
 		
 		List<Exercicio> exerciciosBase = treinoDao.findById(treinoId).getExercicios();
 		
-		List<Exercicio> exerciciosReturn = new ArrayList<Exercicio>();
+		List<Object> exerciciosReturn = new ArrayList<Object>();
 		
 		for (Exercicio exercicio : exerciciosBase) {
 			Exercicio exeClone = new Exercicio();
@@ -79,7 +79,10 @@ public class RestMobileController {
 			exerciciosReturn.add(exeClone);
 		}
 		
-		return exerciciosReturn;
+		JsonReturn jsonReturn = new JsonReturn();
+		jsonReturn.setListData(exerciciosReturn);
+		
+		return jsonReturn;
 	}
 	
 	@Transactional
