@@ -40,6 +40,7 @@
 					</tr>
 				</c:forEach>
 			</table>
+			<a class="btn btn-primary" href="<c:url value="treinos/add"/>"><i class="icon-plus-sign icon-white"></i> </a>
 		</center>        
     </jsp:body>
 </layout:page>

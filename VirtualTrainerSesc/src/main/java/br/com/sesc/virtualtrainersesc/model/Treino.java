@@ -1,5 +1,7 @@
 package br.com.sesc.virtualtrainersesc.model;
 
+import static javax.persistence.GenerationType.AUTO;
+
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -26,6 +28,7 @@ public class Treino implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=AUTO)
 	private Integer id;
 
 	private Integer qtde;
