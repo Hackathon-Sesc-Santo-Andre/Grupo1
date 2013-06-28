@@ -13,17 +13,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import br.org.virtualtrainersesc.model.Treino;
 
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxStatus;
+
+import static br.org.virtualtrainersesc.util.Constantes.IP_ADMIN;
 
 public class Treinos extends RoboActivity{
 	
@@ -56,6 +61,25 @@ public class Treinos extends RoboActivity{
 			}
 		});
 		
+		ImageView imgRefresh = (ImageView) findViewById(R.id.imgRefresh);
+		
+		imgRefresh.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				Bundle param = getIntent().getExtras();
+				System.out.println("cliquei ["+param.getInt("matricula")+"]");
+				
+                param.putInt("matricula", param.getInt("matricula"));
+                
+                Intent intent = new Intent(Treinos.this, Treinos.class);
+                intent.putExtras(param);
+                
+                startActivity(intent);
+                
+				return true;
+			}
+		});
 		
 		popularListView();
 		
@@ -68,7 +92,7 @@ public class Treinos extends RoboActivity{
         	Bundle param = getIntent().getExtras();
         	
         	if(param != null){
-        		String url = "http://172.20.10.7:8080/gym/pages/mobile/treinos/"+param.getInt("matricula");
+        		String url = "http://"+IP_ADMIN+"/gym/pages/mobile/treinos/"+param.getInt("matricula");
         		
         		/*String url = "http://www.google.com/uds/GnewsSearch?q=Obama&v=1.0";*/
         		

@@ -30,14 +30,16 @@ public final class R {
         public static final int logo=0x7f020003;
         public static final int logo2=0x7f020004;
         public static final int navigation_next_item=0x7f020005;
+        public static final int navigation_refresh=0x7f020006;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f090000;
-        public static final int action_settings=0x7f09000d;
+        public static final int action_settings=0x7f09000e;
         public static final int btnEntrar=0x7f090004;
         public static final int btnLimpar=0x7f090005;
         public static final int imExercicios=0x7f09000a;
         public static final int imageView1=0x7f090006;
+        public static final int imgRefresh=0x7f09000d;
         public static final int linearLayout1=0x7f090001;
         public static final int logo=0x7f090007;
         public static final int lsTreinos=0x7f09000b;

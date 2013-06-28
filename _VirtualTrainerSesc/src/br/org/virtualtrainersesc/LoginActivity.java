@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxStatus;
 
+import static br.org.virtualtrainersesc.util.Constantes.IP_ADMIN;
+
 public class LoginActivity extends Activity {
 
 	AQuery a;
@@ -52,7 +54,7 @@ public class LoginActivity extends Activity {
 					return;
 				} 
 					
-        		String url = "http://172.20.10.7:8080/gym/pages/mobile/login/" + strMatricula + "/" + strSenha;
+        		String url = "http://"+IP_ADMIN+"/gym/pages/mobile/login/" + strMatricula + "/" + strSenha;
         		System.out.println(" A URL é [" + url + "]");
         		
         		a.ajax(url, JSONObject.class, this, "retorno");
