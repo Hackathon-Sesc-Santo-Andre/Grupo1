@@ -1,5 +1,7 @@
 package br.com.sesc.virtualtrainersesc.model;
 
+import static javax.persistence.GenerationType.AUTO;
+
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -27,7 +29,8 @@ public class Aluno implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int matricula;
+	@GeneratedValue(strategy=AUTO)
+	private Integer matricula;
 
 	private int idade;
 
@@ -44,11 +47,11 @@ public class Aluno implements Serializable {
 	public Aluno() {
 	}
 
-	public int getMatricula() {
+	public Integer getMatricula() {
 		return this.matricula;
 	}
 
-	public void setMatricula(int matricula) {
+	public void setMatricula(Integer matricula) {
 		this.matricula = matricula;
 	}
 

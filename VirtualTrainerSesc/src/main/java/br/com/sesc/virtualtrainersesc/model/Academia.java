@@ -1,7 +1,10 @@
 package br.com.sesc.virtualtrainersesc.model;
 
+import static javax.persistence.GenerationType.AUTO;
+
 import java.io.Serializable;
 import javax.persistence.*;
+
 import java.sql.Time;
 
 
@@ -15,7 +18,8 @@ public class Academia implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	@GeneratedValue(strategy=AUTO)
+	private Integer id;
 
 	@Column(name="capacidade_total")
 	private int capacidadeTotal;
@@ -31,11 +35,11 @@ public class Academia implements Serializable {
 	public Academia() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

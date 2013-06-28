@@ -1,5 +1,7 @@
 package br.com.sesc.virtualtrainersesc.model;
 
+import static javax.persistence.GenerationType.AUTO;
+
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -14,7 +16,8 @@ public class Exercicio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	@GeneratedValue(strategy=AUTO)
+	private Integer id;
 
 	private String equipamento;
 
@@ -32,11 +35,11 @@ public class Exercicio implements Serializable {
 	public Exercicio() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

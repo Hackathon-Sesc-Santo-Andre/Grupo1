@@ -8,7 +8,8 @@
 			<a class="btn btn-navbar" data-toggle="collapse"
 				data-target=".nav-collapse"> <span class="icon-bar"></span> <span
 				class="icon-bar"></span> <span class="icon-bar"></span>
-			</a> <a class="brand" href="<c:url value="/pages/admin"/>">VirtualSescTrainer</a>
+			</a> 
+			<a class="brand" href="<c:url value="/pages/admin"/>">VirtualSescTrainer</a>
 			<div class="nav-collapse collapse">
 				<p class="navbar-text pull-right">
 					Logado como <a href="#" class="navbar-link"> <c:out	value="${user}" />

@@ -35,7 +35,8 @@
 							</c:choose> 
 						</td>
 						<td>
-							<a class="btn btn-primary" href="<c:url value="treinos/${treino.id}"/>"><i class="icon-user icon-white"></i></a>						
+							<a class="btn btn-primary" href="<c:url value="treinos/${treino.id}"/>"><i class="icon-th-list icon-white"></i></a>
+							<a class="btn btn-primary" href="#" onclick="window.alert('Trial version')"><i class="icon-edit icon-white"></i></a>						
 						</td>
 					</tr>
 				</c:forEach>
