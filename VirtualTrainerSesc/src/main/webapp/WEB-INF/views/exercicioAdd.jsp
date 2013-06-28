@@ -2,7 +2,7 @@
 <%@ taglib prefix="fmt"  uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" 	 uri="http://java.sun.com/jsp/jstl/core"%>
-<layout:page title="VirtualTrainerSesc" description="Listagem de usuário" keywords="amazing, app, Spark" user="${sessionScope.usuarioLogado.nome}">
+<layout:page title="VirtualTrainerSesc" description="Listagem de usuário" keywords="amazing, app, VirtualSescTrainer" user="${sessionScope.usuarioLogado.nome}">
     <jsp:body>
 		<center>
 			<h4>Novo exercicio</h4>

@@ -9,14 +9,14 @@
 				data-target=".nav-collapse"> <span class="icon-bar"></span> <span
 				class="icon-bar"></span> <span class="icon-bar"></span>
 			</a> 
-			<a class="brand" href="<c:url value="/pages/admin"/>">VirtualSescTrainer</a>
+			<a class="brand" href="<c:url value='/pages/admin'/>"/> VirtualSescTrainer </a>
 			<div class="nav-collapse collapse">
 				<p class="navbar-text pull-right">
 					Logado como <a href="#" class="navbar-link"> <c:out	value="${user}" />
 					</a>
 				</p>
 				<ul class="nav">
-					<li class="active"><a href="<c:url value="/pages/admin"/>">Principal</a></li>
+					<li class="active"><a href="<c:url value="/pages/admin"/>"> Principal</a></li>
 					<li><a href="#about">Sobre</a></li>
 					<li><a href="#contact">Contato</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -24,7 +24,7 @@
 						<ul class="dropdown-menu">
 							<li class="nav-header">Administração</li>
 							<li><a href="<c:url value="/pages/admin"/>">Administração de Alunos</a></li>
-							<li><a href="listManut.do">Administração da academia</a></li>
+							<li><a href="#" onclick="window.alert('Trial version')">Administração da academia</a></li>
 							<li class="divider"></li>
 						</ul></li>
 				</ul>

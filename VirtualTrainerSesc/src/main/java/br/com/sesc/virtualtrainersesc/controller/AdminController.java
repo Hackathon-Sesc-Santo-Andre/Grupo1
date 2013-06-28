@@ -35,7 +35,7 @@ public class AdminController {
 	ExercicioDao exercicioDao;
 	
 	@Transactional(readOnly=true)
-	@RequestMapping(value="/admin", method=RequestMethod.GET)
+	@RequestMapping(value="/admin", method={RequestMethod.GET, RequestMethod.POST})
 	public String showAdminPage(HttpServletRequest request,HttpServletResponse response){
 		request.setAttribute("alunos", alunoDao.findAll());
 		
