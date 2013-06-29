@@ -49,10 +49,14 @@ public class Treinos extends RoboActivity{
 
 			@Override
 			public void onItemClick(AdapterView<?> listView, View linha, int position, long idLinha) {
+				Bundle param = getIntent().getExtras();
+				int matricula =  param.getInt("matricula");
 				
-                Bundle param = new Bundle();
+                param = new Bundle();
                 param.putInt("idTreino", ((Treino)linha.getTag()).getId());
                 param.putString("nomeTreino", ((Treino)linha.getTag()).getNome());
+                
+                param.putInt("matricula", matricula);
                 
                 Intent intent = new Intent(Treinos.this, Exercicios.class);
                 intent.putExtras(param);
@@ -82,6 +86,11 @@ public class Treinos extends RoboActivity{
 		});
 		
 		popularListView();
+		
+	}
+	
+	@Override
+	public void onBackPressed() {
 		
 	}
 	
