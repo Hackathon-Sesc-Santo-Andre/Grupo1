@@ -4,7 +4,7 @@
 <layout:page title="VirtualTrainerSesc" description="Home" keywords="amazing, app, VirtualTrainerSesc" user="Admin">
     <jsp:body>
         <center>
-			<table class="table table-hover" style="width: 50%">
+			<table class="table table-hover" style="width: 80%">
 				<tr>
 					<th colspan="7" style="text-align: center;" style="width: 80%"><c:out value="Treinos do ${aluno.nome}" /></th>
 				</tr>
