@@ -73,7 +73,11 @@ public class LoginActivity extends Activity {
 							Toast.makeText(LoginActivity.this, retorno.toString() , Toast.LENGTH_SHORT).show();
 						}
 					}
-				} 
+				} else {
+					Toast.makeText(LoginActivity.this, 
+							"Não foi possivel realizar o login, verifique sua conexão com a internet e tente novamente", 
+							200).show();
+				}
 			}
 
 			private void logar(int matricula) {

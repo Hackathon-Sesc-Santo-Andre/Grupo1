@@ -136,6 +136,7 @@ public class Treinos extends RoboActivity{
 
 				treino.setId(jsonObject.getInt("id"));
 				treino.setNome(jsonObject.getString("nome"));
+				treino.setPorcetagemConcluido(jsonObject.getInt("porcetagemConcluido"));
 
 				treinos.add(treino);
 			}
@@ -171,7 +172,7 @@ public class Treinos extends RoboActivity{
 			
 			Treino treino = treinos.get(position);
 			
-			linhaTreino.setText(treino.getNome());
+			linhaTreino.setText(treino.getNome() + " - "+treino.getPorcetagemConcluido()+" %");
 			linha.setTag(treino);
 			
 			return linha;

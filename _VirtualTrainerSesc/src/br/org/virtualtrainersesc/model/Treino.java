@@ -3,6 +3,7 @@ package br.org.virtualtrainersesc.model;
 public class Treino {
 	private int id;
 	private String nome;
+	private int porcetagemConcluido;
 	
 	public Treino() {
 	}
@@ -19,6 +20,12 @@ public class Treino {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
+
+	public int getPorcetagemConcluido() {
+		return porcetagemConcluido;
+	}
+
+	public void setPorcetagemConcluido(int porcetagemConcluido) {
+		this.porcetagemConcluido = porcetagemConcluido;
+	}
 }
