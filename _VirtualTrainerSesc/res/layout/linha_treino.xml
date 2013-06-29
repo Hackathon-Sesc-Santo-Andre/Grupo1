@@ -21,7 +21,8 @@
         android:layout_marginLeft="14dp"
         android:layout_toRightOf="@+id/imageView1"
         android:text="Treino intermediario"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"  
+        android:textColor="@android:color/black" />
 
     <ImageView
         android:id="@+id/imExercicios"

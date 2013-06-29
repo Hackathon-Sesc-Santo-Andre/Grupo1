@@ -24,13 +24,22 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int icone_virtualtrainer=0x7f020001;
-        public static final int jar_pacote=0x7f020002;
-        public static final int logo=0x7f020003;
-        public static final int logo2=0x7f020004;
-        public static final int navigation_next_item=0x7f020005;
-        public static final int navigation_refresh=0x7f020006;
+        public static final int background1=0x7f020000;
+        public static final int background2=0x7f020001;
+        public static final int background3=0x7f020002;
+        public static final int background4=0x7f020003;
+        public static final int background5=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int icone_virtualtrainer=0x7f020006;
+        public static final int jar_pacote=0x7f020007;
+        public static final int logo=0x7f020008;
+        public static final int logo2=0x7f020009;
+        public static final int logo_art1=0x7f02000a;
+        public static final int logo_art2=0x7f02000b;
+        public static final int logo_final=0x7f02000c;
+        public static final int logofinal=0x7f02000d;
+        public static final int navigation_next_item=0x7f02000e;
+        public static final int navigation_refresh=0x7f02000f;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f090000;
