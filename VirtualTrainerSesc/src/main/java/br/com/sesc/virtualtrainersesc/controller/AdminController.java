@@ -43,6 +43,13 @@ public class AdminController {
 	}
 	
 	@Transactional(readOnly=true)
+	@RequestMapping(value="/about", method={RequestMethod.GET, RequestMethod.POST})
+	public String showAbout(HttpServletRequest request,HttpServletResponse response){
+		
+		return "about";
+	}
+	
+	@Transactional(readOnly=true)
 	@RequestMapping(value="/admin/{matricula}/treinos", method=RequestMethod.GET)
 	public String showTreinosPage(@PathVariable("matricula") Integer matricula,  /*Model model, */HttpServletRequest request) {
 		Aluno aluno = alunoDao.findByMatricula(matricula);

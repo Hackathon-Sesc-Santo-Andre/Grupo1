@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>VirtualSescTrainer</title>
+<title>VirtualTrainer</title>
 <link href="css/bootstrap.css" rel="stylesheet">	
 
 <script src="js/bootstrap.js"></script>
@@ -26,11 +26,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="pages/admin"/> VirtualSescTrainer </a>
+          <a class="brand" href="/gym/pages/admin"/> VirtualSescTrainer </a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="pages/admin" /> Principal</a></li>
-              <li><a href="#about">Sobre</a></li>
+              <li class="active"><a href="/gym/pages/admin" /> Principal</a></li>
+              <li><a href="/gym/pages/about">Sobre</a></li>
               <li><a href="#contact">Contato</a></li>
             </ul>
             <form action="pages/admin" id="formLogin" name="formAutenticacao" method="post" class="navbar-form pull-right">
@@ -49,8 +49,10 @@
 	  </c:if>
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
-        <h1>Virtual Sesc Trainer</h1>
-        <p>Sistema da academia do sesc.</p>
+        <img  src="img/Logo_VirtualTrainer.png">
+        
+        <br><br><br>
+        <center><p>O Sistema da academia do sesc.</p></center>
         <!--<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
       </div>
 
